@@ -1,0 +1,106 @@
+$margin-positions: (
+  a: "margin",
+  x: "margin",
+  y: "margin",
+  t: "margin-top",
+  b: "margin-bottom",
+  s: "margin-left",
+  e: "margin-right"
+);
+$margin-extras-spacer: (
+  auto: auto
+);
+$margin-spacers: map-merge($spacers, $margin-extras-spacer);
+
+@each $position,
+$property in $margin-positions {
+
+  @each $size,
+  $value in $margin-spacers {
+    .m#{$position}-#{$size} {
+      @if $position =='x' {
+        #{$property}: 0 $value;
+      }
+
+      @else if $position =='y' {
+        #{$property}: $value 0;
+      }
+
+      @else {
+        #{$property}: $value;
+      }
+    }
+  }
+}
+
+;
+
+$padding-positions: (
+  a: "padding",
+  x: "padding",
+  y: "padding",
+  t: "padding-top",
+  b: "padding-bottom",
+  s: "padding-left",
+  e: "padding-right"
+);
+
+@each $position,
+$property in $padding-positions {
+
+  @each $size,
+  $value in $spacers {
+    .p#{$position}-#{$size} {
+      @if $position =='x' {
+        #{$property}: 0 $value;
+      }
+
+      @else if $position =='y' {
+        #{$property}: $value 0;
+      }
+
+      @else {
+        #{$property}: $value;
+      }
+    }
+  }
+}
+
+;
+
+$widths: (
+  auto: "auto",
+  0: 0,
+  25: 25%,
+  50: 50%,
+  75: 75%,
+  100: 100%
+);
+
+@each $name,
+$value in $widths {
+  .w-#{$name} {
+    width: #{$value};
+  }
+}
+
+;
+
+$textPositions: (
+  "center",
+  "left",
+  "start",
+  "right",
+  "auto",
+  "justify",
+  "revert",
+  "inherit",
+  "initial",
+  "unset"
+);
+
+@each $position in $textPositions {
+  .text-#{$position} {
+    text-align: #{$position};
+  }
+}
