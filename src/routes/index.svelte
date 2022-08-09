@@ -32,7 +32,7 @@
 
 <svelte:window bind:innerWidth />
 <svelte:head>
-	<title>DevRazz | Ernesto Razo Jr.</title>
+	<title>Ernesto Razo Jr. | Portfolio</title>
 	<meta name="description" content="Hi, my name Ernesto Razo Jr., a residence of El Salvador, Misamis Oriental. I am a Front-end Developer and I've been developing an application for almost 3 years. I'd like to make frontend solutions for both web and mobile applications. Also, I do unit and end-to-end testing as one of the documentation of the application.">
   <meta name="keywords" content="porfolio, frontend developer, web development, mobile development, website">
 </svelte:head>
