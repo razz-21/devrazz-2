@@ -7,7 +7,7 @@
   import type { Engine, IOptions, RecursivePartial } from "tsparticles-engine";
 
   let screenType: ScreenType = "desktop";
-  let particlesConfig: RecursivePartial<IOptions> = {
+  $: particlesConfig = {
     particles: {
       color: {
         value: "#E5E4E9",
@@ -19,11 +19,16 @@
       move: {
         enable: true,
       },
+      opacity: {
+        value: screenType === "desktop" ? 1 : 0
+      }
     },
     style: {
-      position: "absolute"
+      position: "absolute",
+      height: screenType === "desktop" ? "100%" : "100rem"
     }
   }
+
 
   let onParticlesLoaded = (event: CustomEvent) => {
     const particlesContainer = event.detail.particles;
@@ -41,6 +46,7 @@
 
   const screenUnsubscriber = screen.subscribe((screen) => {
     screenType = screen;
+    console.log(screenType);
   });
 
   function scrollTo(section: string) {
@@ -55,14 +61,14 @@
 </script>
 
 <div id="section-1" class="head-content__container">
-  {#if screenType === "desktop"}
+
     <Particles
       id="tsparticles"
       options="{particlesConfig}"
       on:particlesLoaded="{onParticlesLoaded}"
       particlesInit="{particlesInit}"
     />
-  {/if}
+
   <div class="head-content__content">
     <div class="head-content__content-container">
       <div class="head-content__content-main">
