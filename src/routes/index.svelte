@@ -12,7 +12,7 @@
 	import AboutMe from '$lib/AboutMe.svelte';
 	import Footer from '$lib/Footer.svelte';
 	import { scrollSpy } from '$lib/shared/actions/scrollSpy';
-	import { screen } from '../store/screen';
+	import { screen } from '$store/screen';
 
 	let section = "section-1";
 	let innerWidth: number;
@@ -38,7 +38,7 @@
 </svelte:head>
 
 <!-- Template -->
-<div class="main-container" use:scrollSpy={{ spiedTags: ["DIV"], section }} on:sectionChange="{handleSectionChange}">
+<div class="main-container" use:scrollSpy={{ spiedTags: ["DIV"], section }} on:sectionChange={handleSectionChange}>
 	<NavBar bind:section />
 	<HeadContent />
 	<MyServices />

@@ -284,29 +284,29 @@
     }
   }
 
-  .circle-skeleton {
-    &--1 {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      width: 680px;
-      height: 680px;
-      border-radius: 50%;
-      border: 1px solid #dedede;
-      transform: translate(-50%, -50%);
-    }
+  // .circle-skeleton {
+  //   &--1 {
+  //     position: absolute;
+  //     left: 50%;
+  //     top: 50%;
+  //     width: 680px;
+  //     height: 680px;
+  //     border-radius: 50%;
+  //     border: 1px solid #dedede;
+  //     transform: translate(-50%, -50%);
+  //   }
 
-    &--2 {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      width: 880px;
-      height: 880px;
-      border-radius: 50%;
-      border: 1px solid #dedede;
-      transform: translate(-50%, -50%);
-    }
-  }
+  //   &--2 {
+  //     position: absolute;
+  //     left: 50%;
+  //     top: 50%;
+  //     width: 880px;
+  //     height: 880px;
+  //     border-radius: 50%;
+  //     border: 1px solid #dedede;
+  //     transform: translate(-50%, -50%);
+  //   }
+  // }
 
   .techs-logo {
     position: absolute;
