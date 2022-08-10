@@ -55,12 +55,14 @@
 </script>
 
 <div id="section-1" class="head-content__container">
-  <Particles
-    id="tsparticles"
-    options="{particlesConfig}"
-    on:particlesLoaded="{onParticlesLoaded}"
-    particlesInit="{particlesInit}"
-  />
+  {#if screenType === "desktop"}
+    <Particles
+      id="tsparticles"
+      options="{particlesConfig}"
+      on:particlesLoaded="{onParticlesLoaded}"
+      particlesInit="{particlesInit}"
+    />
+  {/if}
   <div class="head-content__content">
     <div class="head-content__content-container">
       <div class="head-content__content-main">

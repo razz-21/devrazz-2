@@ -1,9 +1,8 @@
 <script lang="ts">
-  import { onDestroy, onMount } from "svelte";
+  import { onDestroy } from "svelte";
   import Sidebar from "./SideBar.svelte";
   import Saos from "saos";
   import { screen, type ScreenType } from "$store/screen";
-  import type { Unsubscriber } from "svelte/store";
 
   export let section: string;
   let screenType: ScreenType = "desktop";
@@ -27,7 +26,7 @@
   function scrollTo(section: string) {
     const scrollHeight = document.querySelector(`#${section}`)?.getBoundingClientRect().top || 0;
     scrollBy({
-      top: scrollHeight - 99,
+      top: scrollHeight - 75,
       behavior: "smooth"
     })
   }
@@ -115,7 +114,7 @@
   nav {
     display: flex;
     align-items: center;
-    height: 100px;
+    height: 76px;
     background-color: $surface-primary-color;
 
     .nav__container {

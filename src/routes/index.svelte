@@ -35,6 +35,22 @@
 	<title>Ernesto Razo Jr. | Portfolio</title>
 	<meta name="description" content="Hi, my name Ernesto Razo Jr., a residence of El Salvador, Misamis Oriental. I am a Front-end Developer and I've been developing an application for almost 3 years. I'd like to make frontend solutions for both web and mobile applications. Also, I do unit and end-to-end testing as one of the documentation of the application.">
   <meta name="keywords" content="porfolio, frontend developer, web development, mobile development, website">
+
+	<meta property="og:locale" content="en_US">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ernesto Razo Jr. | Portfolio">
+  <meta property="og:title" content="Ernesto Razo Jr. | Portfolio">
+  <meta property="og:description" content="Hi, my name Ernesto Razo Jr., a residence of El Salvador, Misamis Oriental. I am a Front-end Developer and I've been developing an application for almost 3 years. I'd like to make frontend solutions for both web and mobile applications. Also, I do unit and end-to-end testing as one of the documentation of the application.">
+  <!-- <meta property="og:url" content="https://hyperstacksinc.com"> -->
+  <meta property="og:image" content="/images/thumbnail.png">
+  <meta property="og:image:secure_url" content="/images/thumbnail.png">
+
+	<meta name="twitter:title" content="Ernesto Razo Jr. | Portfolio">
+  <meta name="twitter:description" content="Hi, my name Ernesto Razo Jr., a residence of El Salvador, Misamis Oriental. I am a Front-end Developer and I've been developing an application for almost 3 years. I'd like to make frontend solutions for both web and mobile applications. Also, I do unit and end-to-end testing as one of the documentation of the application.">
+  <meta name="twitter:image" content="/images/thumbnail.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!-- <link rel="canonical" href="https://hyperstacksinc.com"/> -->
 </svelte:head>
 
 <!-- Template -->
