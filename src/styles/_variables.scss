@@ -12,6 +12,35 @@ $surface-secondary-color: #FAFAFA;
 $font-family: 'Nunito', sans-serif;
 $base-font-size: 16px;
 
+/** BlackPink Theme */
+$bp-primary-color: #FF94E0;
+$bp-secondary-color: #FFC3EE;
+
+$bp-surface-primary-color: #1A1A1A;
+
+$bp-text-color: #CFCFCF;
+
+:root {
+  --primary-color: #{$primary-color};
+  --secondary-color: #{$secondary-color};
+  --primary-color-rgb: 255, 91, 3;
+
+  --surface-primary-color: #{$surface-primary-color};
+  --surface-secondary-color: #{$surface-secondary-color};
+
+  --text-color: #{$text-color};
+
+  body.blackpink-theme {
+    --primary-color: #{$bp-primary-color};
+    --secondary-color: #{$bp-secondary-color};
+    --primary-color-rgb: 255, 148, 224;
+
+    --surface-primary-color: #{$bp-surface-primary-color};
+
+    --text-color: #{$bp-text-color};
+  }
+}
+
 $font-weights: (
   "extra-light": 200,
   "light": 300,

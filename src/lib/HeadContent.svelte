@@ -7,6 +7,7 @@
   import type { Engine, IOptions, RecursivePartial } from "tsparticles-engine";
 
   let screenType: ScreenType = "desktop";
+  let theme = "blackpink";
   $: particlesConfig = {
     particles: {
       color: {
@@ -62,15 +63,23 @@
 
 <div id="section-1" class="head-content__container">
 
+  {#if theme === "default"}
     <Particles
       id="tsparticles"
       options="{particlesConfig}"
       on:particlesLoaded="{onParticlesLoaded}"
       particlesInit="{particlesInit}"
     />
+  {/if}
 
   <div class="head-content__content">
     <div class="head-content__content-container">
+
+      <div class="bp-fang-asset">
+        <object type="image/svg+xml" data="/images/bp-fang--left.svg" title="Left fang"></object>
+        <object type="image/svg+xml" data="/images/bp-fang--right.svg" title="Right fang"></object>
+      </div>
+
       <div class="head-content__content-main">
         <div class="content-main__salutation">
           <Saos animation={`1s ease-in-out ${ screenType === "desktop" ? '1s' : '0s' } scale-bounce-in both`} once={true}>
@@ -169,6 +178,7 @@
       overflow: hidden;
 
       &-container {
+        position: relative;
         max-width: 1280px;
         width: 100%;
         margin: 0 auto;
@@ -211,13 +221,26 @@
             &:nth-child(1) {
               left: -9rem;
               top: -2rem;
+              path {
+                &:first-child {
+                  fill: var(--secondary-color);
+                }
+              }
             }
             &:nth-child(2) {
               left: -1rem;
               bottom: -3rem;
+              path {
+                &:not(:last-child) {
+                  fill: var(--secondary-color);
+                }
+              }
             }
             &:nth-child(3) {
               top: 0;
+              path {
+                fill: var(--secondary-color);
+              }
             }
           }
         }
@@ -242,8 +265,24 @@
         width: 52px;
         height: 52px;
         cursor: pointer;
+        path {
+          fill: var(--primary-color);
+        }
       }
     }
+  }
+
+  .bp-fang-asset {
+    position: absolute;
+    top: -1.5rem;
+    left: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 860px;
+    margin: 0 auto;
+    transform: translate(-50%, 0);
   }
 
   @include media-breakpoint-max(md) {

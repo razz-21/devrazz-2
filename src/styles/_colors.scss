@@ -1,2 +1,2 @@
-.text-primary { color: $primary-color !important; }
-.text-secondary { color: $secondary-color !important }
+.text-primary { color: var(--primary-color) !important; }
+.text-secondary { color: var(--secondary-color) !important }

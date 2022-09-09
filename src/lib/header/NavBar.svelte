@@ -57,33 +57,33 @@
         </div>
         {#if screenType === "desktop"}
           <div class="nav__menu-container">
-          <ul class="nav__menu">
-            <li class="nav__menu-item" class:active={ section === "section-1" }>
-              <!-- svelte-ignore a11y-missing-attribute -->
-              <a on:click={() => scrollTo("section-1")}>Home</a>
-            </li>
-            <li class="nav__menu-item" class:active={ section === "section-2" }>
-              <!-- svelte-ignore a11y-missing-attribute -->
-              <a on:click={() => scrollTo("section-2")}>Services</a>
-            </li>
-            <li class="nav__menu-item" class:active={ section === "section-3" }>
-              <!-- svelte-ignore a11y-missing-attribute -->
-              <a on:click={() => scrollTo("section-3")}>Projects</a>
-            </li>
-            <li class="nav__menu-item" class:active={ section === "section-4" }>
-              <!-- svelte-ignore a11y-missing-attribute -->
-              <a on:click={() => scrollTo("section-4")}>Techs & Tools</a>
-            </li>
-            <li class="nav__menu-item" class:active={ section === "section-5" }>
-              <!-- svelte-ignore a11y-missing-attribute -->
-              <a on:click={() => scrollTo("section-5")}>About Me</a>
-            </li>
-            <li class="nav__menu-item" class:active={ section === "section-6" }>
-              <!-- svelte-ignore a11y-missing-attribute -->
-              <a on:click={() => scrollTo("section-6")}>Contacts</a>
-            </li>
-          </ul>
-        </div>
+            <ul class="nav__menu">
+              <li class="nav__menu-item" class:active={ section === "section-1" }>
+                <!-- svelte-ignore a11y-missing-attribute -->
+                <a on:click={() => scrollTo("section-1")}>Home</a>
+              </li>
+              <li class="nav__menu-item" class:active={ section === "section-2" }>
+                <!-- svelte-ignore a11y-missing-attribute -->
+                <a on:click={() => scrollTo("section-2")}>Services</a>
+              </li>
+              <li class="nav__menu-item" class:active={ section === "section-3" }>
+                <!-- svelte-ignore a11y-missing-attribute -->
+                <a on:click={() => scrollTo("section-3")}>Projects</a>
+              </li>
+              <li class="nav__menu-item" class:active={ section === "section-4" }>
+                <!-- svelte-ignore a11y-missing-attribute -->
+                <a on:click={() => scrollTo("section-4")}>Techs & Tools</a>
+              </li>
+              <li class="nav__menu-item" class:active={ section === "section-5" }>
+                <!-- svelte-ignore a11y-missing-attribute -->
+                <a on:click={() => scrollTo("section-5")}>About Me</a>
+              </li>
+              <li class="nav__menu-item" class:active={ section === "section-6" }>
+                <!-- svelte-ignore a11y-missing-attribute -->
+                <a on:click={() => scrollTo("section-6")}>Contacts</a>
+              </li>
+            </ul>
+          </div>
         {/if}
         <a id="getCVHeadButton" type="button" class="btn" style="margin-left: { screenType === "desktop" ? "unset" : "auto" }"
           href="/CV - Ernesto Razo [24.06.2022].pdf" download="CV - Ernesto Razo">
@@ -115,7 +115,7 @@
     display: flex;
     align-items: center;
     height: 76px;
-    background-color: $surface-primary-color;
+    background-color: var(--surface-primary-color);
 
     .nav__container {
       @include container-maxwidth();
@@ -126,6 +126,18 @@
       
       margin: auto;
 
+      .nav__logo {
+        svg {
+          path {
+            stroke: var(--primary-color);
+
+            &:not(:first-child) {
+              fill: var(--primary-color);
+            }
+          }
+        }
+      }
+
       .nav__menu-container {
         ul.nav__menu {
           display: inline-flex;
@@ -133,7 +145,7 @@
           li.nav__menu-item {
             a {
               padding: 0.75rem 1.5rem;
-              color: $text-color;
+              color: var(--text-color);
               font-size: 14px;
               text-transform: uppercase;
               border-radius: 2px;
@@ -143,14 +155,14 @@
 
             &.active {
               a {
-                color: $primary-color;
+                color: var(--primary-color);
               }
             }
 
             &:hover {
               a {
-                background-color: rgba($color: $primary-color, $alpha: 0.1);
-                color: $primary-color;
+                background-color: rgba($color: var(--primary-color-rgb), $alpha: 0.1);
+                color: var(--primary-color);
                 transition: 150ms ease-in-out;
               }
             }
@@ -169,7 +181,7 @@
 
           &:hover {
             path {
-              fill: $primary-color;
+              fill: var(--primary-color);
               transition: all ease-in-out 150ms;
             }
           }
@@ -178,10 +190,10 @@
     }
 
     #getCVHeadButton {
-      color: $primary-color;
+      color: var(--primary-color);
 
       &:hover {
-        background-color: rgba($color: $primary-color, $alpha: 0.2);
+        background-color: rgba($color: var(--primary-color-rgb), $alpha: 0.2);
       }
     }
   }
