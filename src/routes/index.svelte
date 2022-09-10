@@ -13,9 +13,12 @@
 	import Footer from '$lib/Footer.svelte';
 	import { scrollSpy } from '$lib/shared/actions/scrollSpy';
 	import { screen } from '$store/screen';
+	import { theme } from '$store/theme';
+	import { browser } from '$app/env';
 
 	let section = "section-1";
 	let innerWidth: number;
+	let themeName = $theme;
 
 	$: {
     if (innerWidth) {
@@ -24,6 +27,14 @@
       else { screen.update(screen => screen = "mobile"); }
     }
   }
+
+	setTheme();
+
+	function setTheme(): void {
+		if (browser) {
+			document.body.classList.add(`${themeName}-theme`);
+		}
+	}
 
 	function handleSectionChange(e: CustomEvent) {
 		section = e.detail;

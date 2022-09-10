@@ -94,7 +94,7 @@
               left: 0;
               bottom: 0;
               width: 100%;
-              color: #FF5B03;
+              color: var(--primary-color);
               transition: all 300ms ease-in-out;
             }
           }

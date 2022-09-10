@@ -12,6 +12,7 @@ const config = {
 		scss: {
 			prependData: `@import './src/styles/variables.scss';`,
 		}
+		
 	}),
 
 	kit: {
@@ -21,6 +22,13 @@ const config = {
 		methodOverride: {
 			allowed: ['PATCH', 'DELETE']
 		}
+	},
+	onwarn: (warning, handler) => {
+		const { code, frame, filename } = warning
+		if (code === "css-unused-selector") {
+				return;
+		}
+		handler(warning);
 	}
 };
 

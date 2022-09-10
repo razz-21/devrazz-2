@@ -1,6 +1,8 @@
 <script lang="ts">
   import Saos from "saos";
+  import { theme } from "$store/theme";
 
+  let themeName = $theme;
   let techLogos = [
     {
       name: "HTML5",
@@ -223,7 +225,7 @@
 
 </script>
 
-<div id="section-4" class="techs-and-tools__container">
+<div id="section-4" class="techs-and-tools techs-and-tools__container" class:blackpink-theme="{themeName === 'blackpink'}">
   <div class="techs-and-tools__content-container">
     <div class="title" on:mouseover={handleTitleHover} on:focus={handleTitleHover}>
       <Saos animation={"600ms ease tracking-in-expand both"} once={true} top={100} on:update={handleTitleObserver}>
@@ -278,6 +280,24 @@
           span {
             &:nth-child(1) { color: #FF5B03 }
             &:nth-child(2) { color: #FF9100 }
+          }
+        }
+      }
+    }
+
+
+    &.blackpink-theme {
+      &.techs-and-tools__container {
+        background-color: var(--surface-secondary-color);
+      }
+
+      .techs-and-tools__content {
+        &-container {
+          .title {
+            span {
+              &:nth-child(1) { color: #FF94E0 }
+              &:nth-child(2) { color: #ff59c7 }
+            }
           }
         }
       }

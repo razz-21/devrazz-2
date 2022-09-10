@@ -5,9 +5,9 @@
   import Particles from "svelte-particles";
   import { loadFull } from "tsparticles";
   import type { Engine, IOptions, RecursivePartial } from "tsparticles-engine";
+  import { theme } from '$store/theme'
 
   let screenType: ScreenType = "desktop";
-  let theme = "blackpink";
   $: particlesConfig = {
     particles: {
       color: {
@@ -63,7 +63,7 @@
 
 <div id="section-1" class="head-content__container">
 
-  {#if theme === "default"}
+  {#if $theme === "default"}
     <Particles
       id="tsparticles"
       options="{particlesConfig}"
@@ -75,10 +75,12 @@
   <div class="head-content__content">
     <div class="head-content__content-container">
 
-      <div class="bp-fang-asset">
-        <object type="image/svg+xml" data="/images/bp-fang--left.svg" title="Left fang"></object>
-        <object type="image/svg+xml" data="/images/bp-fang--right.svg" title="Right fang"></object>
-      </div>
+      {#if $theme === "blackpink"}
+        <div class="bp-fang-asset">
+          <object type="image/svg+xml" data="/images/bp-fang--left.svg" title="Left fang"></object>
+          <object type="image/svg+xml" data="/images/bp-fang--right.svg" title="Right fang"></object>
+        </div>
+      {/if}
 
       <div class="head-content__content-main">
         <div class="content-main__salutation">

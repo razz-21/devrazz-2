@@ -17,8 +17,10 @@ $bp-primary-color: #FF94E0;
 $bp-secondary-color: #FFC3EE;
 
 $bp-surface-primary-color: #1A1A1A;
+$bp-surface-secondary-color: #2E2E2E;
 
 $bp-text-color: #CFCFCF;
+$bp-font-family: 'Playfair Display', serif;
 
 :root {
   --primary-color: #{$primary-color};
@@ -28,7 +30,12 @@ $bp-text-color: #CFCFCF;
   --surface-primary-color: #{$surface-primary-color};
   --surface-secondary-color: #{$surface-secondary-color};
 
+  --font-family: #{$font-family};
   --text-color: #{$text-color};
+
+  --button-gradient: linear-gradient(360deg, #FF5B03 0%, #FBAE53 100%);
+
+  transition: all ease 300ms;
 
   body.blackpink-theme {
     --primary-color: #{$bp-primary-color};
@@ -36,8 +43,14 @@ $bp-text-color: #CFCFCF;
     --primary-color-rgb: 255, 148, 224;
 
     --surface-primary-color: #{$bp-surface-primary-color};
+    --surface-secondary-color: #{$bp-surface-secondary-color};
 
+    --font-family: #{$bp-font-family};
     --text-color: #{$bp-text-color};
+
+    --button-gradient: linear-gradient(360deg, #FF59C7 0%, #FD8DDD 100%);
+
+    transition: all ease 300ms;
   }
 }
 
