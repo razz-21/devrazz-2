@@ -2,7 +2,6 @@
   import Saos from "saos";
   import { theme } from "$store/theme";
 
-  let themeName = $theme;
   let techLogos = [
     {
       name: "HTML5",
@@ -225,7 +224,7 @@
 
 </script>
 
-<div id="section-4" class="techs-and-tools techs-and-tools__container" class:blackpink-theme="{themeName === 'blackpink'}">
+<div id="section-4" class="techs-and-tools techs-and-tools__container" class:blackpink-theme="{$theme === 'blackpink'}">
   <div class="techs-and-tools__content-container">
     <div class="title" on:mouseover={handleTitleHover} on:focus={handleTitleHover}>
       <Saos animation={"600ms ease tracking-in-expand both"} once={true} top={100} on:update={handleTitleObserver}>

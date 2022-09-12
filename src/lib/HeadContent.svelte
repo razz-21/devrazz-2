@@ -1,10 +1,11 @@
 <script lang="ts">
+  import { fade } from "svelte/transition";
   import { screen, type ScreenType } from "$store/screen";
   import { onDestroy } from "svelte";
   import Saos from "saos";
   import Particles from "svelte-particles";
   import { loadFull } from "tsparticles";
-  import type { Engine, IOptions, RecursivePartial } from "tsparticles-engine";
+  import type { Engine } from "tsparticles-engine";
   import { theme } from '$store/theme'
 
   let screenType: ScreenType = "desktop";
@@ -47,7 +48,6 @@
 
   const screenUnsubscriber = screen.subscribe((screen) => {
     screenType = screen;
-    console.log(screenType);
   });
 
   function scrollTo(section: string) {
@@ -64,21 +64,23 @@
 <div id="section-1" class="head-content__container">
 
   {#if $theme === "default"}
-    <Particles
-      id="tsparticles"
-      options="{particlesConfig}"
-      on:particlesLoaded="{onParticlesLoaded}"
-      particlesInit="{particlesInit}"
-    />
+    <div transition:fade>
+      <Particles
+        id="tsparticles"
+        options="{particlesConfig}"
+        on:particlesLoaded="{onParticlesLoaded}"
+        particlesInit="{particlesInit}"
+      />
+    </div>
   {/if}
 
   <div class="head-content__content">
     <div class="head-content__content-container">
 
       {#if $theme === "blackpink"}
-        <div class="bp-fang-asset">
-          <object type="image/svg+xml" data="/images/bp-fang--left.svg" title="Left fang"></object>
-          <object type="image/svg+xml" data="/images/bp-fang--right.svg" title="Right fang"></object>
+        <div class="bp-fang-asset" transition:fade>
+          <object type="image/svg+xml" data="/images/bp-fang--left.svg" title="Left fang" style:animation="float 6s ease-in-out infinite"></object>
+          <object type="image/svg+xml" data="/images/bp-fang--right.svg" title="Right fang" style:animation="float 6s ease-in-out infinite"></object>
         </div>
       {/if}
 
@@ -132,7 +134,7 @@
       </div>
       <div class="head-content__content-image">
         <Saos animation={`1s ease ${ screenType === "desktop" ? '2s' : '0s' } fade-in both`} once={true}>
-          <img src="images/razz__image1.png" height="380" width="380" alt="Ernesto Razo">
+          <img src="images/razz__image{ $theme === "blackpink" ? "-bp" : "1" }.png" height="380" width="380" alt="Ernesto Razo">
         </Saos>
         <Saos animation={`1s ease ${ screenType === "desktop" ? '2.5s' : '0s' } fade-in both`} once={true}>
           <div class="tech-extras">

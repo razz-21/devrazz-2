@@ -13,7 +13,7 @@
     <div class="body-content">
       <Saos animation={"1s ease slide-left-fade both"} once={true} top={100}>
         <div class="image">
-          <img src="/images/about-me--photo.png" alt="Ernesto Razo">
+          <img src="/images/about-me--photo{$theme === "blackpink" ? "-bp" : ""}.png" alt="Ernesto Razo">
         </div>
       </Saos>
       <div class="texts">

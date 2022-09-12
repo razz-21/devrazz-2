@@ -23,7 +23,7 @@
 
   &-primary-gradient {
     color: $color-white;
-    background: var(--button-gradient);
+    background: var(--primary-gradient);
 
     &:hover {
       box-shadow: 0px 2px 20px rgba($color: var(--primary-color-rgb), $alpha: 0.5);

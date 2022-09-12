@@ -18,7 +18,7 @@
 
 	let section = "section-1";
 	let innerWidth: number;
-	let themeName = $theme;
+
 
 	$: {
     if (innerWidth) {
@@ -28,11 +28,18 @@
     }
   }
 
-	setTheme();
+	$: {
+		$theme;
+		setTheme();
+	};
 
 	function setTheme(): void {
 		if (browser) {
-			document.body.classList.add(`${themeName}-theme`);
+			const bodyEl = document.body;
+			bodyEl.classList.remove("default-theme");
+			bodyEl.classList.remove("blackpink-theme");
+
+			bodyEl.classList.add(`${$theme}-theme`);
 		}
 	}
 

@@ -71,7 +71,7 @@
       height: 100vh;
       width: 360px;
       padding: 2rem 1.5rem;
-      background-color: #FFFFFF;
+      background-color: var(--surface-primary-color);
       overflow: hidden;
       z-index: 10;
 
@@ -91,7 +91,7 @@
         cursor: pointer;
 
         &.active {
-          background-image: linear-gradient(to right, #FFA50F, #FF7A00);
+          background-image: var(--primary-gradient);
 
           a {
             color: $color-white;
@@ -101,7 +101,7 @@
         a {
           font-size: 18px;
           font-weight: 600;
-          color: $text-color;
+          color: var(--text-color);
         }
       }
     }
@@ -127,7 +127,7 @@
       width: 32px;
       cursor: pointer;
 
-      path { fill: $primary-color; }
+      path { fill: var(--primary-color); }
     }
   }
 </style>
