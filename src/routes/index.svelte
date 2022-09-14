@@ -11,6 +11,7 @@
 	import TechsAndTools from '$lib/TechsAndTools.svelte';
 	import AboutMe from '$lib/AboutMe.svelte';
 	import Footer from '$lib/Footer.svelte';
+	import AudioPlayer from '$lib/components/AudioPlayer.svelte';
 	import { scrollSpy } from '$lib/shared/actions/scrollSpy';
 	import { screen } from '$store/screen';
 	import { theme } from '$store/theme';
@@ -81,6 +82,7 @@
 	<TechsAndTools />
 	<AboutMe />
 	<Footer />
+	<AudioPlayer />
 </div>
 <!-- /Template-->
 
