@@ -33,7 +33,7 @@
           <div class="details">
             <h3>Muuvment</h3>
             <h5 class="font-regular">FRONT-END DEVELOPER</h5>
-            <h6 class="font-regular">2020 - 2022</h6>
+            <h6 class="font-regular">2020 - PRESENT</h6>
           </div>
         </div>
       </Saos>

@@ -1,6 +1,6 @@
 <script lang="ts">
   import { theme } from "$store/theme";
-  import { slide } from "svelte/transition";
+  import { slide, fly } from "svelte/transition";
 	import { onMount } from "svelte";
 
   let audioEl: HTMLAudioElement;
@@ -9,7 +9,10 @@
   $: audioPlayerState = "Loading";
 
   $: {
-    if ($theme === "blackpink") setTimeout(() => onLoadPlayer());
+    if ($theme === "blackpink") {
+      setTimeout(() => onLoadPlayer());
+      showMiniPlayer = true;
+    };
   }
 
   function onLoadPlayer(): void {
@@ -32,17 +35,21 @@
 
 {#if $theme === "blackpink" }
   <div class="audio-player" transition:slide={{ duration: 500, delay: 500 }}>
-    <audio bind:this={audioEl} src="/audios/BLACKPINK-Shut Down--TEASER.mp3"
+    <audio bind:this={audioEl} src="/audios/BLACKPINK--Pink-Venom.mp3"
       on:load="{() => onLoadPlayer()}" on:canplay="{() => audioPlayerState = "Ready"}" on:playing="{() => audioPlayerState = "Playing"}" on:pause="{() => audioPlayerState = "Paused" }"
       on:ended="{() => audioPlayerState = "Ended" }">
     </audio>
     <div class="audio-player__container">
       {#if showMiniPlayer}
-        <div class="audio-mini-player" transition:slide={{ duration: 300 }}>
+        <div class="audio-mini-player" transition:fly|local={{ duration: 300, x: -20 }}>
           <img id="player-poster" class:playing={audioPlayerState === "Playing"} src="/images/pink-venom--poster.jpg" alt="thumbnail">
           <div class="audio-btn-toggle">
 
-            {#if audioPlayerState === "Ready" || audioPlayerState === "Paused" || audioPlayerState === "Ended"}
+            {#if audioPlayerState === "Loading"}
+              <svg id="svg-loading" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M4.5 9C2.01472 9 0 6.98528 0 4.5C0 2.01472 2.01472 0 4.5 0C6.98528 0 9 2.01472 9 4.5C9 6.98528 6.98528 9 4.5 9ZM0 15.5C0 17.9853 2.01472 20 4.5 20C6.98528 20 9 17.9853 9 15.5C9 13.0147 6.98528 11 4.5 11C2.01472 11 0 13.0147 0 15.5ZM11 15.5C11 17.9853 13.0147 20 15.5 20C17.9853 20 20 17.9853 20 15.5C20 13.0147 17.9853 11 15.5 11C13.0147 11 11 13.0147 11 15.5ZM11 4.5C11 6.98528 13.0147 9 15.5 9C17.9853 9 20 6.98528 20 4.5C20 2.01472 17.9853 0 15.5 0C13.0147 0 11 2.01472 11 4.5ZM15.5 7C16.8807 7 18 5.88071 18 4.5C18 3.11929 16.8807 2 15.5 2C14.1193 2 13 3.11929 13 4.5C13 5.88071 14.1193 7 15.5 7ZM7 4.5C7 5.88071 5.88071 7 4.5 7C3.11929 7 2 5.88071 2 4.5C2 3.11929 3.11929 2 4.5 2C5.88071 2 7 3.11929 7 4.5ZM15.5 18C16.8807 18 18 16.8807 18 15.5C18 14.1193 16.8807 13 15.5 13C14.1193 13 13 14.1193 13 15.5C13 16.8807 14.1193 18 15.5 18ZM7 15.5C7 16.8807 5.88071 18 4.5 18C3.11929 18 2 16.8807 2 15.5C2 14.1193 3.11929 13 4.5 13C5.88071 13 7 14.1193 7 15.5Z" fill="black"/>
+              </svg>
+            {:else if audioPlayerState === "Ready" || audioPlayerState === "Paused" || audioPlayerState === "Ended"}
               <svg width="28" height="28" viewBox="0 0 16 22" fill="none" xmlns="http://www.w3.org/2000/svg" on:click="{() => audioEl.play()}">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M0 2.00005V20C0 20.7912 0.875246 21.2691 1.54076 20.8412L15.5408 11.8412C16.1531 11.4476 16.1531 10.5525 15.5408 10.1589L1.54076 1.15887C0.875246 0.731041 0 1.20888 0 2.00005ZM13.1507 11L2 18.1684V3.83171L13.1507 11Z" fill="black"/>
               </svg>
@@ -127,6 +134,12 @@
     &.playing {
       animation-play-state: running;
     }
+  }
+  
+  #svg-loading {
+    animation: playerRotate 2s linear infinite both;
+    user-select: none;
+    pointer-events: none;
   }
   
   @keyframes playerRotate {
