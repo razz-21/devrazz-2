@@ -35,7 +35,7 @@
 
 {#if $theme === "blackpink" }
   <div class="audio-player" transition:slide={{ duration: 500, delay: 500 }}>
-    <audio bind:this={audioEl} src="/audios/BLACKPINK--Pink-Venom.mp3"
+    <audio bind:this={audioEl} src="/audios/BLACKPINK--Shut Down.mp3"
       on:load="{() => onLoadPlayer()}" on:canplay="{() => audioPlayerState = "Ready"}" on:playing="{() => audioPlayerState = "Playing"}" on:pause="{() => audioPlayerState = "Paused" }"
       on:ended="{() => audioPlayerState = "Ended" }">
     </audio>
