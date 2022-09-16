@@ -12,6 +12,7 @@ const config = {
 		scss: {
 			prependData: `@import './src/styles/variables.scss';`,
 		}
+		
 	}),
 
 	kit: {

@@ -11,11 +11,15 @@
 	import TechsAndTools from '$lib/TechsAndTools.svelte';
 	import AboutMe from '$lib/AboutMe.svelte';
 	import Footer from '$lib/Footer.svelte';
+	import AudioPlayer from '$lib/components/AudioPlayer.svelte';
 	import { scrollSpy } from '$lib/shared/actions/scrollSpy';
 	import { screen } from '$store/screen';
+	import { theme } from '$store/theme';
+	import { browser } from '$app/env';
 
 	let section = "section-1";
 	let innerWidth: number;
+
 
 	$: {
     if (innerWidth) {
@@ -24,6 +28,21 @@
       else { screen.update(screen => screen = "mobile"); }
     }
   }
+
+	$: {
+		$theme;
+		setTheme();
+	};
+
+	function setTheme(): void {
+		if (browser) {
+			const bodyEl = document.body;
+			bodyEl.classList.remove("default-theme");
+			bodyEl.classList.remove("blackpink-theme");
+
+			bodyEl.classList.add(`${$theme}-theme`);
+		}
+	}
 
 	function handleSectionChange(e: CustomEvent) {
 		section = e.detail;
@@ -63,6 +82,7 @@
 	<TechsAndTools />
 	<AboutMe />
 	<Footer />
+	<AudioPlayer />
 </div>
 <!-- /Template-->
 

@@ -1,8 +1,9 @@
 <script lang="ts">
   import Saos from "saos";
+  import { theme } from "$store/theme";
 </script>
 
-<div id="section-5" class="about-me__container">
+<div id="section-5" class="about-me about-me__container" class:blackpink-theme="{ $theme ===  "blackpink"}">
   <div class="about-me__content-container">
     <Saos animation={"1s ease slide-up-fade both"} once={true} top={100}>
       <h2 class="title">
@@ -12,7 +13,7 @@
     <div class="body-content">
       <Saos animation={"1s ease slide-left-fade both"} once={true} top={100}>
         <div class="image">
-          <img src="/images/about-me--photo.png" alt="Ernesto Razo">
+          <img src="/images/about-me--photo{$theme === "blackpink" ? "-bp" : ""}.png" alt="Ernesto Razo">
         </div>
       </Saos>
       <div class="texts">
@@ -108,10 +109,24 @@
             flex-basis: 50%;
             flex-grow: 0;
 
+            &::before {
+              content: "";
+              position: absolute;
+              left: -1rem;
+              bottom: -0.75rem;
+              height: 100%;
+              width: 100%;
+              background-color: var(--primary-color);
+              border-radius: 12px;
+              z-index: 1;
+            }
+
             img {
+              position: relative;
               width: 100%;
               height: 100%;
               max-width: 483px;
+              z-index: 2;
             }
           }
           .texts {
@@ -164,6 +179,63 @@
           bottom: 9rem;
           right: 9rem;
           height: 3rem;
+        }
+      }
+    }
+  }
+
+  .blackpink-theme {
+    &.about-me {
+      color: #5A5A5A;
+
+      &__container {
+        background-color: #C4C4C4;
+      }
+    }
+
+    .about-me__content {
+      &-container {
+        .title {
+          color: #2E2E2E;
+
+          &::after {
+            background-color: #CFCFCF;
+          }
+        }
+      }
+    }
+
+    .about-me__assets-image {
+      svg {
+        &:nth-child(1) {
+          circle {
+            stroke: #797979;
+          }
+        }
+        &:nth-child(2) {
+          circle {
+            fill: #FF94E0;
+          }
+        }
+        &:nth-child(3) {
+          path {
+            &:nth-child(1), &:nth-child(3) {
+              fill: #797979;
+            }
+            &:nth-child(2) {
+              fill: #FF94E0;
+            }
+          }
+        }
+        &:nth-child(4) {
+          rect {
+            fill: #797979;
+          }
+        }
+        &:nth-child(5) {
+          circle {
+            fill: #FF94E0;
+          }
         }
       }
     }

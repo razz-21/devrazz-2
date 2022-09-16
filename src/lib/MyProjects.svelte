@@ -197,7 +197,7 @@
   .my-projects {
     &__container {
       padding: 10rem 2.5rem;
-      background-color: #FAFAFA;
+      background-color: var(--surface-primary-color);
     }
     
     &__content {
@@ -232,7 +232,7 @@
           align-items: baseline;
           justify-content: center;
           flex-direction: column;
-          box-shadow: 0px 0px 8px 1px rgba(255, 91, 3, 0.3);
+          box-shadow: 0px 0px 8px 1px rgba($color: var(--primary-color-rgb), $alpha: 0.4);
         }
 
         &:nth-child(2) {
@@ -349,7 +349,7 @@
           align-items: center;
           justify-content: center;
           flex-direction: column;
-          box-shadow: 0px 0px 8px 1px rgba(255, 91, 3, 0.3);
+          box-shadow: 0px 0px 8px 1px rgba($color: var(--primary-color-rgb), $alpha: 0.4);
         }
       }
     }
