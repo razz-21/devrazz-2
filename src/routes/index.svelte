@@ -17,6 +17,8 @@
 	import { theme } from '$store/theme';
 	import { browser } from '$app/env';
 
+	export const ssr = false;
+
 	let section = "section-1";
 	let innerWidth: number;
 
@@ -82,7 +84,7 @@
 	<TechsAndTools />
 	<AboutMe />
 	<Footer />
-	<AudioPlayer />
+	<!-- <AudioPlayer /> -->
 </div>
 <!-- /Template-->
 

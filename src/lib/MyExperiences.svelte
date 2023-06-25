@@ -33,7 +33,7 @@
           <div class="details">
             <h3>Muuvment</h3>
             <h5 class="font-regular">FRONT-END DEVELOPER</h5>
-            <h6 class="font-regular">2020 - PRESENT</h6>
+            <h6 class="font-regular">2020 - 2023</h6>
           </div>
         </div>
       </Saos>
@@ -46,6 +46,18 @@
             <h3>Nathan & Nathan</h3>
             <h5 class="font-regular">FRONT-END DEVELOPER</h5>
             <h6 class="font-regular">MAY 2020 - JULY 2022</h6>
+          </div>
+        </div>
+      </Saos>
+      <Saos animation={"1s ease slide-up-fade both"} once={true} top={100}>
+        <div class="my-experiences__grid-item">
+          <div class="logo">
+            <img src="images/nalagenetics-logo.png" height="38" width="38" alt="Nathan & Nathan">
+          </div>
+          <div class="details">
+            <h3>Nalagenetics</h3>
+            <h5 class="font-regular">SOFTWARE ENGINEER</h5>
+            <h6 class="font-regular">AUGUST 2022 - PRESENT</h6>
           </div>
         </div>
       </Saos>

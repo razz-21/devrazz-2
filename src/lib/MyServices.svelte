@@ -27,7 +27,7 @@
             </svg>
           </div>
           <h5>Web Development</h5>
-          <p>Create a front-end web application and transform your idea into a real-world application.</p>
+          <p>Develop a front-end web application and bring your concept to life by transforming it into a practical, functional application for real-world use.</p>
         </div>
       </Saos>
       <Saos animation={"800ms ease 600ms flip-in-ver-right both"} once={true}>
@@ -40,7 +40,7 @@
 
           </div>
           <h5>Responsive Web</h5>
-          <p>Make your website available on any device, from a big desktop to a mobile.</p>
+          <p>Ensure your website is accessible across a wide range of devices, including desktop computers and mobile devices, allowing users to seamlessly view and interact with it regardless of their screen size.</p>
         </div>
       </Saos>
       <Saos animation={"800ms ease 900ms flip-in-ver-right both"} once={true}>
@@ -52,7 +52,7 @@
             </svg>
           </div>
           <h5>Mobile Developement</h5>
-          <p>Develops a mobile application for Android and brings it to real-life scenario.</p>
+          <p>Create a mobile application for the Android platform and translate it into a practical application that can be utilized in real-world scenarios.</p>
         </div>
       </Saos>
     </div>
