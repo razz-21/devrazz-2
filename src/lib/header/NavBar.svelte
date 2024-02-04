@@ -86,7 +86,7 @@
           </div>
         {/if}
         <a id="getCVHeadButton" type="button" class="btn" style="margin-left: { screenType === "desktop" ? "unset" : "auto" }"
-          href="/CV - Ernesto Razo [24.06.2022].pdf" download="CV - Ernesto Razo">
+          href="/CV - Ernesto Razo [02.04.2023].pdf" download="CV - Ernesto Razo">
           Get CV
         </a>
         {#if screenType !== "desktop"}

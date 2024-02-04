@@ -1,6 +1,8 @@
 <script lang="ts">
   import Saos from "saos";
   import { theme } from "$store/theme";
+
+  let yearsOfExperience = new Date().getFullYear() - 2019;
 </script>
 
 <div id="section-5" class="about-me about-me__container" class:blackpink-theme="{ $theme ===  "blackpink"}">
@@ -20,21 +22,23 @@
         <div class="description-item">
           <Saos animation={"1s ease slide-right-fade both"} once={true} top={100}>
             <img src="/images/emoji__show.png" alt="Emoji Show">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Montes, pellentesque facilisis cursus risus tincidunt massa euismod at. Luctus congue amet lorem vitae. Fermentum viverra est amet egestas feugiat sit amet. Fames massa sapien ullamcorper pellentesque mauris tincidunt elit. Pellentesque lobortis cras feugiat condimentum vitae varius nulla.</p>
+            <p>
+              Hello, I'm Razz, a seasoned front-end developer with {yearsOfExperience} years of experience, dedicated to crafting visually stunning and seamlessly functional digital experiences. Proficient in HTML, CSS, and JavaScript, I specialize in turning unique concepts into pixel-perfect websites, staying ahead with technologies like Angular and Svelte. I bring a collaborative spirit to every project, working seamlessly with cross-functional teams to ensure smooth workflows.
+            </p>
           </Saos>
         </div>
         <div class="description-item">
           <Saos animation={"1s ease slide-right-fade both"} once={true} top={100}>
             <img src="/images/emoji__rocket.png" alt="Emoji Rocket">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Montes, pellentesque facilisis cursus risus tincidunt massa euismod at. Luctus congue amet lorem vitae. Fermentum viverra est amet egestas feugiat sit amet. Fames massa sapien ullamcorper pellentesque mauris tincidunt elit. Pellentesque lobortis cras feugiat condimentum vitae varius nulla.</p>
+            <p>Embark on a journey through my passions! Traveling is not just a hobby for me; it's a love affair with new experiences, a diverse cultures and landscapes of the world. Exploring far and wide ignites my curiosity, turning every destination into an opportunity to learn and grow. In the realm of online games, I find joy and excitement, a pastime that has woven its way into the fabric of my leisure moments. But the rhythm of life doesn't stop there; dancing is a cherished talent I discovered in my youth, a form of expression that still captivates me today.</p>
           </Saos>
         </div>
-        <div class="description-item">
+        <!-- <div class="description-item">
           <Saos animation={"1s ease slide-right-fade both"} once={true} top={100}>
             <img src="/images/emoji__sparkle.png" alt="Emoji Sparkle">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Montes, pellentesque facilisis cursus risus tincidunt massa euismod at. Luctus congue amet lorem vitae. Fermentum viverra est amet egestas feugiat sit amet. Fames massa sapien ullamcorper pellentesque mauris tincidunt elit. Pellentesque lobortis cras feugiat condimentum vitae varius nulla.</p>
           </Saos>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
