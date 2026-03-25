@@ -117,7 +117,7 @@
         <div style:position={"relative"} style:overflow={"hidden"}>
           <Saos animation={`1s ease ${ screenType === "desktop" ? '3.5s' : '0s' } slide-overflow-up both`} once={true}>
             <a id="getCvBtn" type="button" class="btn btn-primary-gradient" style="margin: 3rem 0; display: inline-block;"
-              href="/CV - Ernesto Razo [04.13.2024].pdf" download="CV - Ernesto Razo">
+              href="/CV - Ernesto Razo [03.25.2026]" download="CV - Ernesto Razo">
               Get CV
             </a>
           </Saos>
